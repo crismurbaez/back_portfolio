@@ -19,7 +19,17 @@ CORS(app)
 
 @app.route("/", methods=["GET"])
 def index():
-    return "send_email with POST"
+    template = {
+        "message": "send_email with POST",
+        "template body": {
+            "name": " any name ",
+            "email": "any email address",
+            "asunto": "any asunto email",
+            "mensaje": "any mensaje email",
+        },
+    }
+
+    return template
 
 
 @app.route("/sendemail", methods=["POST"])
